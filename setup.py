@@ -18,6 +18,6 @@ setup(
       zip_safe=False,
       setup_requires=["numpy"],
       install_requires=[
-       "math",
+       "numpy",
       ]
 )
