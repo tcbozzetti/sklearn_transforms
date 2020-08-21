@@ -1,6 +1,6 @@
 from sklearn.base import BaseEstimator, TransformerMixin
 
-import math
+import numpy as np
 
 # All sklearn Transforms must have the `transform` and `fit` methods
 class DropColumns(BaseEstimator, TransformerMixin):
@@ -18,7 +18,7 @@ class DropColumns(BaseEstimator, TransformerMixin):
 
 class FillMissingGrade(BaseEstimator, TransformerMixin):
     def fill(self, row):
-        if math.isnan(row['NOTA_GO']):
+        if np.isnan(row['NOTA_GO']):
             return (row['NOTA_DE'] + row['NOTA_EM'] + row['NOTA_MF']) / 3
         else:
             return row['NOTA_GO']

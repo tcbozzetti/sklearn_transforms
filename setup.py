@@ -16,6 +16,7 @@ setup(
             'my_custom_sklearn_transforms'
       ],
       zip_safe=False,
+      setup_requires=["numpy"],
       install_requires=[
        "math",
       ]
