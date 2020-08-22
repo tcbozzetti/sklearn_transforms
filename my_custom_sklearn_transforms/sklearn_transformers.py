@@ -1,6 +1,7 @@
 from sklearn.base import BaseEstimator, TransformerMixin
 
 import numpy
+import pandas
 
 # All sklearn Transforms must have the `transform` and `fit` methods
 class DropColumns(BaseEstimator, TransformerMixin):
@@ -40,4 +41,4 @@ class NormalizeColumn(BaseEstimator, TransformerMixin):
         data['INGLES'].fillna('NAO_INFORMADO', inplace = True)
         data['INGLES'] = data['INGLES'].replace([0], 'NAO')
         data['INGLES'] = data['INGLES'].replace([1], 'SIM')
-        return pd.get_dummies(data, columns=['INGLES'])
+        return pandas.get_dummies(data, columns=['INGLES'])
